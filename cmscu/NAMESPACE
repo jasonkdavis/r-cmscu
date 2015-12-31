@@ -1,0 +1,4 @@
+useDynLib(cmscu);
+exportPattern("^[[:alpha:]]+");
+import(Rcpp);
+

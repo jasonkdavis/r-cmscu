@@ -1,0 +1,12 @@
+Package: cmscu
+Title: A Fast Count-Min-Sketch Implementation.
+Version: 0.1
+Date: 2015-12-31
+Author: Jason K Davis
+Maintainer: Jason K Davis <jkd@jasonkarldavis.com>
+Description: For use in obtaining frequency data of ngrams in a large corpus of textual data. Uses a count-min-sketch with conservative update.
+License: UNLICENSE (public domain)
+Imports: Rcpp (>= 0.11.5)
+LinkingTo: Rcpp
+RcppModules: cmscu
+
