@@ -2,7 +2,9 @@
 An R source package implementing the Count-Min-Sketch with conservative updating.
 
 # Source Distribution
-    The tarball cmscu.tar.gz in this repository contains the latest packaged source. It can be installed via RStudio or `R CMD INSTALL cmscu.tar.gz` from the command line. Note: the package `Rcpp` is required before installation, e.g. `install.packages('Rcpp')`.
+The tarball cmscu.tar.gz in this repository contains the latest packaged source. It can be installed via RStudio or `R CMD INSTALL cmscu.tar.gz` from the command line. Note: the package `Rcpp` is required before installation, e.g. `install.packages('Rcpp')`.
+
+Further note: the parallel features require OpenMP support in your build environment. Typically this means that the parallel functions won't actually run in parallel unless installed in a Linux environment. Nevertheless, it is still considerably faster to run `dict$parallel_query(1, list_of_strings)` than `sapply(list_of_strings, dict$parallel_query)` for large lists.
 
 # Sample Usage:
     require(cmscu);
