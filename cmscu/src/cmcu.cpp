@@ -382,8 +382,10 @@ void MurmurHash3_x64_128 ( const void * key, const int len,
 
 
 
-
+#ifdef _OPENMP
 #include <omp.h>
+#endif
+
 #include <Rcpp.h>
 
 #include <algorithm>
@@ -517,7 +519,9 @@ class CountMinSketch {
 		}
 
 		vector<uint> parallel_query(int cores, const vector<string>& words) const {
+#ifdef _OPENMP
 			omp_set_num_threads(cores);
+#endif
 			const size_t len = words.size();
 			vector<uint> response(len);
 			#pragma omp parallel for
@@ -526,7 +530,9 @@ class CountMinSketch {
 			return response;
 		}
 		void parallel_store(int cores, const vector<string>& words) {
+#ifdef _OPENMP
 			omp_set_num_threads(cores);
+#endif
 			const size_t len = words.size();
 			#pragma omp parallel for
 			for (size_t i = 0; i < len; i++)
