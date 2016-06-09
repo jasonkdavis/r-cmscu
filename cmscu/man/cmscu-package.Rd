@@ -1,25 +1,33 @@
 \name{cmscu-package}
 \alias{cmscu-package}
 \alias{cmscu}
+\alias{FrequencyDictionary}
+
 \docType{package}
-\title{A Count-Min-Sketch for R.}
-\description{For use in obtaining frequency data of ngrams in a large corpus of textual data.}
+
+\title{A Count-Min-Sketch with Conservative Update implementation for R}
+\description{The count-min-sketch is a probabilistic algorithm for computing the approximate frequency of strings in a space-efficient and computationally-efficient manner. (See Cormode and Muthukrishnan, "An improved data stream summary: the count-min sketch and its applications.") Note: hashing is provided by the public domain MurmurHash3 implementation (https://github.com/aappleby/smhasher). See the class documentation for methods, usage, etc.}
+
+
 \details{
 \tabular{ll}{
 Package: \tab cmscu\cr
 Type: \tab Package\cr
-Version: \tab 0.1\cr
-Date: \tab 2015-12-31\cr
-License: \tab UNLICENSE\cr
+Version: \tab 1.0\cr
+Date: \tab 2016-05-23\cr
+License: \tab BSD_3_clause\cr
+}}
+
+\seealso{
+  \code{\link{Rcpp_FrequencyDictionary-class}}.
 }
-There are only 4 methods: store(string), parallel_store(num threads, vector of strings), query(string), parallel_query(num threads, vector of strings).
-}
+
 \author{
-Jason K Davis
-Maintainer: Jason K Davis <jkd@jasonkarldavis.com>
+Jason K Davis <jkd@jasonkarldavis.com> [aut,cre],
+David W Vinson <dave@davevinson.com> [aut],
+Maintainer: Jason K Davis
 }
-\references{http://www.sciencedirect.com/science/article/pii/S0196677403001913}
-\keyword{ ngram, sketch }
-\seealso{}
-\examples{}
+\references{
+https://github.com/jasonkdavis/r-cmscu
+}
 
