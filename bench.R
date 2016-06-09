@@ -33,10 +33,10 @@ afdRun <- function() {
   # allocate a fixed 1GB for the dictionary
   dict <- new(FrequencyDictionary, 4, 2^24);
   invisible(
-    lapply(srcData, function(lst) dict$parallel_store(1, lst))
+    lapply(srcData, function(lst) dict$store(lst))
   );
 
-  return(sapply(srcData, function(lst) -mean(log2(dict$parallel_query(1, lst))), USE.NAMES=FALSE));
+  return(sapply(srcData, function(lst) -mean(log2(dict$query(lst))), USE.NAMES=FALSE));
 }
 
 
