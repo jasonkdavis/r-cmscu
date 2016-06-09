@@ -54,4 +54,21 @@ Further note: the parallel features require OpenMP support in your build environ
 
 	# plot the histogram
 	hist(info);
-   
+
+# Extras
+The file mkn.R contains an implementation of the modified Kneser-Ney smoothing algorithm powered by the cmscu library. It is still undergoing development and documentation, so use at your own risk! With that said,
+    # initialize the smoothing for ngrams of up to order 3
+	# (pass the other arguments to each instance of cmscu objects,
+	#  of which there are 2*n, where n is the order of the ngram)
+	smoother <- mkn(3, 4, 2^20);
+	# sentence is a character vector of words
+	train(smoother, a_sentence);
+	# train can be called many, many times
+	train(smoother, another_sentence);
+
+	# finalize when there is no more data
+	smoother <- finalize(smoother);
+	# smoother is now a function which takes a character vector
+	# of trigram tokens, and returns their probabilities
+	# (note: this includes all suffixing-ngram probabilities)
+
