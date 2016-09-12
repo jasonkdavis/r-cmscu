@@ -72,3 +72,5 @@ The file mkn.R contains an implementation of the modified Kneser-Ney smoothing a
 	# of trigram tokens, and returns their probabilities
 	# (note: this includes all suffixing-ngram probabilities)
 
+# Acknowledgments
+The authors of this software gratefully acknowledge funding from NSF grant #1344279. We further thank the [author of MurmurHash](https://github.com/aappleby/smhasher) for their public domain implementation of the hashing function used in this software.
