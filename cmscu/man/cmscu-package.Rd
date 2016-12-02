@@ -28,6 +28,7 @@ David W Vinson <dave@davevinson.com> [aut],
 Maintainer: Jason K Davis
 }
 \references{
+http://link.springer.com/article/10.3758/s13428-016-0766-5,
 https://github.com/jasonkdavis/r-cmscu
 }
 
